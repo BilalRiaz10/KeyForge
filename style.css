@@ -1,45 +1,48 @@
 /* ==========================================================================
-   KEYFORGE - STYLESHEET (Version 2 - Responsive Dashboard)
+   KEYFORGE - STYLESHEET (Cyberpunk Emerald & Cyan Theme)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    1. Theme Variables & Reset
    -------------------------------------------------------------------------- */
 :root {
-  /* Color Palette - Dark Theme (Default) */
-  --bg-color: #0b0f19;
-  --card-bg: rgba(22, 30, 46, 0.75);
-  --card-border: rgba(255, 255, 255, 0.08);
-  --text-main: #f3f4f6;
-  --text-muted: #9ca3af;
-  --text-subtle: #6b7280;
+  /* Color Palette - Cyberpunk Emerald & Cyan (Dark Theme Default) */
+  --bg-color: #060d13;
+  --card-bg: rgba(11, 23, 33, 0.88);
+  --card-border: rgba(16, 185, 129, 0.18);
+  --text-main: #f0fdf4;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
   
-  --primary: #6366f1;
-  --primary-hover: #4f46e5;
-  --primary-light: rgba(99, 102, 241, 0.15);
+  --primary: #10b981;
+  --primary-hover: #059669;
+  --primary-light: rgba(16, 185, 129, 0.15);
   
-  --input-bg: #0f172a;
-  --input-border: #1e293b;
-  --input-border-focus: #6366f1;
+  --accent-cyan: #06b6d4;
+  --accent-cyan-light: rgba(6, 182, 212, 0.15);
+
+  --input-bg: #0b151e;
+  --input-border: #162a3b;
+  --input-border-focus: #10b981;
   
-  --divider: rgba(255, 255, 255, 0.06);
+  --divider: rgba(255, 255, 255, 0.07);
 
   /* Strength Colors */
-  --strength-weak: #ef4444;
+  --strength-weak: #f43f5e;
   --strength-medium: #f97316;
   --strength-strong: #eab308;
-  --strength-very-strong: #22c55e;
+  --strength-very-strong: #10b981;
   
   /* Status & Action Colors */
-  --warning-bg: rgba(239, 68, 68, 0.12);
-  --warning-border: rgba(239, 68, 68, 0.3);
-  --warning-text: #fca5a5;
+  --warning-bg: rgba(244, 63, 94, 0.12);
+  --warning-border: rgba(244, 63, 94, 0.3);
+  --warning-text: #fda4af;
 
-  --success-bg: rgba(34, 197, 94, 0.12);
-  --success-text: #4ade80;
+  --success-bg: rgba(16, 185, 129, 0.12);
+  --success-text: #34d399;
 
-  --shadow-card: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(255, 255, 255, 0.05);
-  --shadow-btn: 0 4px 12px rgba(99, 102, 241, 0.3);
+  --shadow-card: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 20px rgba(16, 185, 129, 0.08);
+  --shadow-btn: 0 4px 14px rgba(16, 185, 129, 0.35);
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -53,32 +56,35 @@
 }
 
 [data-theme="light"] {
-  --bg-color: #f1f5f9;
-  --card-bg: rgba(255, 255, 255, 0.95);
-  --card-border: rgba(0, 0, 0, 0.06);
-  --text-main: #0f172a;
-  --text-muted: #475569;
+  --bg-color: #ecfdf5;
+  --card-bg: rgba(255, 255, 255, 0.96);
+  --card-border: rgba(16, 185, 129, 0.15);
+  --text-main: #064e3b;
+  --text-muted: #334155;
   --text-subtle: #64748b;
   
-  --primary: #4f46e5;
-  --primary-hover: #4338ca;
-  --primary-light: rgba(79, 70, 229, 0.1);
+  --primary: #059669;
+  --primary-hover: #047857;
+  --primary-light: rgba(5, 150, 105, 0.12);
+
+  --accent-cyan: #0891b2;
+  --accent-cyan-light: rgba(8, 145, 178, 0.1);
   
-  --input-bg: #f8fafc;
+  --input-bg: #f0fdf4;
   --input-border: #cbd5e1;
-  --input-border-focus: #4f46e5;
+  --input-border-focus: #059669;
   
   --divider: rgba(0, 0, 0, 0.08);
 
-  --warning-bg: rgba(239, 68, 68, 0.08);
-  --warning-border: rgba(239, 68, 68, 0.25);
-  --warning-text: #dc2626;
+  --warning-bg: rgba(244, 63, 94, 0.08);
+  --warning-border: rgba(244, 63, 94, 0.25);
+  --warning-text: #e11d48;
 
-  --success-bg: rgba(34, 197, 94, 0.08);
-  --success-text: #16a34a;
+  --success-bg: rgba(16, 185, 129, 0.08);
+  --success-text: #059669;
 
-  --shadow-card: 0 20px 35px -10px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
-  --shadow-btn: 0 4px 14px rgba(79, 70, 229, 0.25);
+  --shadow-card: 0 20px 35px -10px rgba(6, 78, 59, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-btn: 0 4px 14px rgba(5, 150, 105, 0.25);
 }
 
 /* Box Sizing Reset */
@@ -132,7 +138,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, var(--primary), #818cf8);
+  background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -289,11 +295,11 @@ body {
 
 .action-btn:hover {
   color: var(--text-main);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(16, 185, 129, 0.12);
 }
 
 [data-theme="light"] .action-btn:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(5, 150, 105, 0.08);
 }
 
 .copy-btn {
@@ -332,7 +338,7 @@ body {
   position: absolute;
   top: -34px;
   right: 0;
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
   color: #ffffff;
   font-size: 0.78rem;
   font-weight: 600;
@@ -342,7 +348,7 @@ body {
   transform: translateY(6px);
   pointer-events: none;
   transition: var(--transition);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
   z-index: 10;
 }
 
@@ -397,6 +403,7 @@ body {
   background: var(--primary-light);
   border-color: var(--primary);
   color: var(--primary);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
 }
 
 /* --------------------------------------------------------------------------
@@ -431,14 +438,10 @@ body {
 .entropy-badge {
   font-size: 0.76rem;
   font-family: var(--font-mono);
-  color: var(--text-subtle);
-  background: rgba(255, 255, 255, 0.05);
+  color: var(--accent-cyan);
+  background: var(--accent-cyan-light);
   padding: 2px 8px;
   border-radius: 12px;
-}
-
-[data-theme="light"] .entropy-badge {
-  background: rgba(0, 0, 0, 0.05);
 }
 
 .strength-meter-container {
@@ -566,7 +569,7 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   background: #ffffff;
   border: 3px solid var(--primary);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
   cursor: pointer;
   transition: transform 0.15s ease, border-color 0.15s ease;
 }
@@ -581,7 +584,7 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 50%;
   background: #ffffff;
   border: 3px solid var(--primary);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
   cursor: pointer;
   transition: transform 0.15s ease, border-color 0.15s ease;
 }
@@ -637,6 +640,7 @@ input[type="range"]::-moz-range-thumb {
 .checkbox-option input[type="checkbox"]:checked ~ .custom-checkbox {
   background: var(--primary);
   border-color: var(--primary);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
 }
 
 .checkbox-option input[type="checkbox"]:checked ~ .custom-checkbox::after {
@@ -758,7 +762,7 @@ input[type="range"]::-moz-range-thumb {
    9. Main Generate Button
    -------------------------------------------------------------------------- */
 .main-generate-btn {
-  background: linear-gradient(135deg, var(--primary), #818cf8);
+  background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
   color: #ffffff;
   border: none;
   padding: 12px 18px;
@@ -779,7 +783,7 @@ input[type="range"]::-moz-range-thumb {
 
 .main-generate-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 8px 22px rgba(16, 185, 129, 0.45);
 }
 
 .main-generate-btn:disabled {
