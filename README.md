@@ -1,47 +1,50 @@
-# KeyForge 🛡️
+# KeyForge 🛡️ (Version 2)
 
-> **Secure • Client-Side • Free**  
-> Cryptographically secure password generator powered by the Web Crypto API. Passwords are generated locally and never leave your browser.
+> **Secure • Client-Side • Professional Password Utility**  
+> Cryptographically secure password generator & utility powered by the Web Crypto API. Passwords are generated locally and never leave your browser.
 
-![KeyForge Screenshot](https://img.shields.io/badge/Security-Client--Side-brightgreen) ![JavaScript](https://img.shields.io/badge/Language-Vanilla%20JS-blue) ![License](https://img.shields.io/badge/License-MIT-orange) ![Dependencies](https://img.shields.io/badge/Dependencies-Zero-success)
-
----
-
-## ✨ Features
-
-- 🔒 **100% Client-Side Security**: Utilizes `window.crypto.getRandomValues()` with rejection sampling for true cryptographic randomness. `Math.random()` is never used.
-- 📊 **Real-time Entropy Calculation**: Calculates password entropy in bits ($E = L \times \log_2 R$) and displays dynamic strength ratings (Weak, Medium, Strong, Very Strong).
-- 🎛️ **Full Customization**:
-  - Length range slider from 8 to 64 characters (default: 16).
-  - Uppercase Letters (`A-Z`)
-  - Lowercase Letters (`a-z`)
-  - Numbers (`0-9`)
-  - Symbols (`!@#$%^&*()_+-=[]{}|;:,.<>?`)
-  - Option to **Exclude Ambiguous Characters** (`0, O, 1, l, I`).
-- 🌓 **Dark & Light Mode**: Modern glassmorphic theme system, dark mode by default, persisted in `localStorage` and responsive to system `prefers-color-scheme`.
-- 📋 **One-Click Copy Feedback**: Clipboard integration with animated visual checkmark and toast notifications.
-- 📱 **Fully Responsive**: Optimized for desktop, tablet, and touch-friendly mobile navigation.
-- ⚡ **Zero Dependencies**: Pure HTML5, CSS3, and modern ES6 JavaScript. No frameworks or third-party libraries.
+![KeyForge Screenshot](https://img.shields.io/badge/Security-Client--Side-brightgreen) ![JavaScript](https://img.shields.io/badge/Language-Vanilla%20JS-blue) ![Version](https://img.shields.io/badge/Version-2.0-indigo) ![Dependencies](https://img.shields.io/badge/Dependencies-Zero-success)
 
 ---
 
-## 🚀 Quick Start / How to Run
+## ✨ Version 2 Features
+
+- 🔒 **100% Client-Side Cryptographic Security**: Utilizes `window.crypto.getRandomValues()` with rejection sampling for true cryptographic randomness. `Math.random()` is never used.
+- ⚡ **Quick Password Presets**: One-click configuration presets:
+  - **Basic**: Length 12, Uppercase, Lowercase, Numbers.
+  - **Strong**: Length 16, Uppercase, Lowercase, Numbers, Symbols.
+  - **Maximum**: Length 32, Uppercase, Lowercase, Numbers, Symbols.
+  - **Custom**: Automatically active when adjusting any slider or checkbox.
+- 👁️ **Password Visibility Toggle**: Show or hide password with bullet masking (`••••••••`) without modifying the actual password string.
+- 📊 **Real-time Entropy & Analysis Checklist**:
+  - Live entropy calculation in bits ($E = L \times \log_2 R$).
+  - Password strength rating bar (Weak, Medium, Strong, Very Strong).
+  - Password analysis checklist evaluating length, uppercase, lowercase, numbers, symbols, and character variety.
+- 🔢 **Minimum Character Requirements**: Specify exact required minimum counts for uppercase, lowercase, numbers, or symbols with built-in validation.
+- 🔀 **Secure Shuffling**: Guarantees required character counts and applies Web Crypto Fisher-Yates array shuffling to avoid predictable positions.
+- 📜 **Opt-in Password History**:
+  - Disabled by default for maximum privacy.
+  - Saves up to 10 recent passwords in `localStorage`.
+  - Individual copy/delete buttons & custom accessible modal confirmation dialog for clearing history.
+- 💾 **Settings Persistence**: Saves generator settings, active preset, theme, and history preferences in `localStorage`.
+- ⌨️ **Keyboard Shortcuts**: Press `Ctrl + Enter` (or `Cmd + Enter`) to generate a new password instantly; press `Escape` to close modals.
+- 🌓 **Dark & Light Mode**: Modern glassmorphic theme system with smooth CSS variable transitions.
+- 🛡️ **Privacy Accordion**: Collapsible "How does this work?" section explaining local browser security without exaggerated claims.
+
+---
+
+## 🚀 Quick Start
 
 Because **KeyForge** runs 100% client-side in the browser, no installation or build step is required!
 
-### Option 1: Direct File Open
-1. Clone or download this repository.
-2. Open `index.html` directly in any web browser.
-
-### Option 2: Run via Local Server (e.g. VS Code Live Server or Python)
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/keyforge.git
+git clone https://github.com/your-username/KeyForge.git
 
 # Navigate to project directory
-cd keyforge
+cd KeyForge
 
-# Start a simple local HTTP server (Python 3)
+# Start a simple local HTTP server
 python -m http.server 8080
 ```
 Then open `http://localhost:8080` in your web browser.
@@ -52,23 +55,22 @@ Then open `http://localhost:8080` in your web browser.
 
 ```text
 KeyForge/
-├── index.html     # Semantic HTML5 layout & ARIA accessibility tags
-├── style.css      # CSS custom properties, glassmorphism card, themes & animations
-├── script.js     # Cryptographic RNG, Fisher-Yates shuffle, entropy & UI state engine
-└── README.md      # Project documentation
+├── index.html     # Semantic HTML5 structure with Presets, Requirements, & History
+├── style.css      # CSS custom properties, glassmorphism, responsive grid & themes
+├── script.js     # Cryptographic RNG, Fisher-Yates shuffle, presets & state management
+└── README.md      # V2 Documentation
 ```
 
 ---
 
-## 🔐 Technical & Security Details
+## 🔐 Security Specifications
 
-- **Randomness Algorithm**: Uses Web Crypto API's `crypto.getRandomValues()` combined with rejection sampling to guarantee uniform distribution without modulo bias.
-- **Character Diversity**: Guarantees that at least one character from every active character pool is included in the output password before executing a cryptographically secure Fisher-Yates shuffle.
-- **Entropy Formula**:
-  $$\text{Entropy (bits)} = \text{Length} \times \log_2(\text{Pool Size})$$
+- **Randomness Source**: `window.crypto.getRandomValues()` exclusively.
+- **Modulo Bias Mitigation**: Rejection sampling algorithm ensures uniform integer selection across arbitrary pool sizes.
+- **Privacy Standard**: Zero HTTP requests, zero network calls, zero tracking analytics, zero telemetry.
 
 ---
 
 ## 📜 License
 
-This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute it!
+This project is licensed under the [MIT License](LICENSE).
