@@ -9,7 +9,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
   
   <!-- App Stylesheet -->
   <link rel="stylesheet" href="style.css">
@@ -20,7 +20,7 @@
     <header class="app-header">
       <div class="brand">
         <div class="brand-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
             <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
           </svg>
@@ -33,7 +33,7 @@
       
       <!-- Theme Switcher Button -->
       <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode" title="Toggle theme">
-        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="4"/>
           <path d="M12 2v2"/>
           <path d="M12 20v2"/>
@@ -44,7 +44,7 @@
           <path d="m6.34 17.66-1.41 1.41"/>
           <path d="m19.07 4.93-1.41 1.41"/>
         </svg>
-        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
         </svg>
       </button>
@@ -53,125 +53,166 @@
     <!-- Main Generator Card -->
     <main class="generator-card">
       
-      <!-- Output Password Field -->
-      <div class="password-display-wrapper">
-        <div class="password-field-container">
-          <input 
-            type="text" 
-            id="password-output" 
-            class="password-output" 
-            readonly 
-            placeholder="Click Generate" 
-            aria-label="Generated Password"
-          />
-          <div class="action-buttons">
-            <!-- Visibility Toggle Button -->
-            <button id="btn-toggle-visibility" class="action-btn icon-btn" title="Toggle Password Visibility" aria-label="Show password">
-              <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
-                <circle cx="12" cy="12" r="3"/>
-              </svg>
-              <svg class="eye-off-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-                <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/>
-                <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/>
-                <path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/>
-                <line x1="2" y1="2" x2="22" y2="22"/>
-              </svg>
-            </button>
-            
-            <!-- Regenerate Button -->
-            <button id="btn-generate" class="action-btn icon-btn" title="Generate New Password" aria-label="Generate Password">
-              <svg id="generate-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
-                <path d="M3 3v5h5"/>
-                <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
-                <path d="M16 21h5v-5"/>
-              </svg>
-            </button>
-            
-            <!-- Copy Button -->
-            <button id="btn-copy" class="action-btn copy-btn" title="Copy to Clipboard" aria-label="Copy Password">
-              <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
-                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
-              </svg>
-              <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-              <span id="copy-text">Copy</span>
-            </button>
-          </div>
-        </div>
+      <!-- Left Panel: Output, Presets, Strength Analysis, Generate CTA, Privacy -->
+      <div class="panel-left">
         
-        <!-- Toast Feedback Notification -->
-        <div id="toast" class="toast-message" aria-live="polite">Copied to clipboard!</div>
+        <!-- Output Password Field -->
+        <div class="password-display-wrapper">
+          <div class="password-field-container">
+            <input 
+              type="text" 
+              id="password-output" 
+              class="password-output" 
+              readonly 
+              placeholder="Click Generate" 
+              aria-label="Generated Password"
+            />
+            <div class="action-buttons">
+              <!-- Visibility Toggle Button -->
+              <button id="btn-toggle-visibility" class="action-btn icon-btn" title="Toggle Password Visibility" aria-label="Toggle password visibility">
+                <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+                <svg class="eye-off-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                  <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/>
+                  <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/>
+                  <path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/>
+                  <line x1="2" y1="2" x2="22" y2="22"/>
+                </svg>
+              </button>
+              
+              <!-- Regenerate Button -->
+              <button id="btn-generate" class="action-btn icon-btn" title="Generate New Password" aria-label="Generate Password">
+                <svg id="generate-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                  <path d="M3 3v5h5"/>
+                  <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+                  <path d="M16 21h5v-5"/>
+                </svg>
+              </button>
+              
+              <!-- Copy Button -->
+              <button id="btn-copy" class="action-btn copy-btn" title="Copy to Clipboard" aria-label="Copy Password">
+                <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+                  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+                </svg>
+                <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span id="copy-text">Copy</span>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Toast Feedback Notification -->
+          <div id="toast" class="toast-message" aria-live="polite">Copied to clipboard!</div>
+        </div>
+
+        <!-- Quick Presets Bar -->
+        <div class="presets-section">
+          <span class="section-label">Quick Presets</span>
+          <div class="preset-buttons" role="group" aria-label="Password Presets">
+            <button type="button" class="preset-btn" data-preset="basic">Basic</button>
+            <button type="button" class="preset-btn active" data-preset="strong">Strong</button>
+            <button type="button" class="preset-btn" data-preset="maximum">Maximum</button>
+            <button type="button" class="preset-btn" data-preset="custom">Custom</button>
+          </div>
+        </div>
+
+        <!-- Password Strength & Analysis Section -->
+        <section class="strength-section" aria-label="Password Strength Analysis">
+          <div class="strength-header">
+            <span class="strength-title">Strength: <strong id="strength-label">Strong</strong></span>
+            <span id="entropy-display" class="entropy-badge">78 bits entropy</span>
+          </div>
+          <div class="strength-meter-container">
+            <div id="strength-bar" class="strength-bar" style="width: 75%; background-color: var(--strength-strong);"></div>
+          </div>
+          
+          <!-- Analysis Checklist Grid -->
+          <div class="analysis-checklist" id="analysis-checklist">
+            <div class="checklist-item active" id="check-length">
+              <span class="check-icon">✓</span>
+              <span class="check-text">Optimal length (≥12)</span>
+            </div>
+            <div class="checklist-item active" id="check-uppercase">
+              <span class="check-icon">✓</span>
+              <span class="check-text">Uppercase (A-Z)</span>
+            </div>
+            <div class="checklist-item active" id="check-lowercase">
+              <span class="check-icon">✓</span>
+              <span class="check-text">Lowercase (a-z)</span>
+            </div>
+            <div class="checklist-item active" id="check-numbers">
+              <span class="check-icon">✓</span>
+              <span class="check-text">Numbers (0-9)</span>
+            </div>
+            <div class="checklist-item active" id="check-symbols">
+              <span class="check-icon">✓</span>
+              <span class="check-text">Symbols (!@#$)</span>
+            </div>
+            <div class="checklist-item active" id="check-variety">
+              <span class="check-icon">✓</span>
+              <span class="check-text">High variety</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Warning / Validation Error Banner -->
+        <div id="warning-banner" class="warning-banner" style="display: none;" hidden>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          <span id="warning-text">Please select at least one character set.</span>
+        </div>
+
+        <!-- Main Generate CTA Button -->
+        <button id="btn-main-generate" class="main-generate-btn" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+            <path d="M3 3v5h5"/>
+            <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+            <path d="M16 21h5v-5"/>
+          </svg>
+          <span>Generate Password</span>
+        </button>
+
+        <!-- Privacy & Security Information Accordion -->
+        <section class="privacy-section">
+          <details class="privacy-details">
+            <summary class="privacy-summary">
+              <div class="summary-left">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                  <path d="m9 12 2 2 4-4"/>
+                </svg>
+                <span>Client-Side Privacy Guarantee</span>
+              </div>
+              <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            </summary>
+            <div class="privacy-content">
+              <ul class="privacy-checklist">
+                <li><span>✓</span> <strong>Local Web Crypto</strong>: Generated in memory with CSPRNG.</li>
+                <li><span>✓</span> <strong>Zero Network Requests</strong>: No backend servers or logs.</li>
+                <li><span>✓</span> <strong>Private History</strong>: Stored exclusively in local browser storage when opted in.</li>
+              </ul>
+            </div>
+          </details>
+        </section>
+
       </div>
 
-      <!-- Quick Presets Bar -->
-      <div class="presets-section">
-        <span class="section-subtitle">Quick Presets</span>
-        <div class="preset-buttons" role="group" aria-label="Password Presets">
-          <button type="button" class="preset-btn" data-preset="basic">Basic</button>
-          <button type="button" class="preset-btn" data-preset="strong">Strong</button>
-          <button type="button" class="preset-btn" data-preset="maximum">Maximum</button>
-          <button type="button" class="preset-btn active" data-preset="custom">Custom</button>
-        </div>
-      </div>
-
-      <!-- Password Strength & Analysis Section -->
-      <section class="strength-section" aria-label="Password Strength Analysis">
-        <div class="strength-header">
-          <span class="strength-title">Strength Rating: <strong id="strength-label">Strong</strong></span>
-          <span id="entropy-display" class="entropy-badge">78 bits entropy</span>
-        </div>
-        <div class="strength-meter-container">
-          <div id="strength-bar" class="strength-bar" style="width: 75%; background-color: var(--strength-strong);"></div>
-        </div>
-        
-        <!-- Analysis Checklist -->
-        <div class="analysis-checklist" id="analysis-checklist">
-          <div class="checklist-item" id="check-length">
-            <span class="check-icon">✓</span>
-            <span class="check-text">Good password length</span>
-          </div>
-          <div class="checklist-item" id="check-uppercase">
-            <span class="check-icon">✓</span>
-            <span class="check-text">Contains uppercase letters</span>
-          </div>
-          <div class="checklist-item" id="check-lowercase">
-            <span class="check-icon">✓</span>
-            <span class="check-text">Contains lowercase letters</span>
-          </div>
-          <div class="checklist-item" id="check-numbers">
-            <span class="check-icon">✓</span>
-            <span class="check-text">Contains numbers</span>
-          </div>
-          <div class="checklist-item" id="check-symbols">
-            <span class="check-icon">✓</span>
-            <span class="check-text">Contains symbols</span>
-          </div>
-          <div class="checklist-item" id="check-variety">
-            <span class="check-icon">✓</span>
-            <span class="check-text">Good character variety</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Warning / Validation Error Banner -->
-      <div id="warning-banner" class="warning-banner" style="display: none;" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
-          <line x1="12" y1="9" x2="12" y2="13"/>
-          <line x1="12" y1="17" x2="12.01" y2="17"/>
-        </svg>
-        <span id="warning-text">Please select at least one character type to generate a password.</span>
-      </div>
-
-      <!-- Controls & Options -->
-      <div class="controls-section">
+      <!-- Right Panel: Password Length, Character Sets, Requirements, History -->
+      <div class="panel-right">
         
         <!-- Length Slider Control -->
-        <div class="control-group">
+        <div class="control-group length-group">
           <div class="control-label-row">
             <label for="length-slider" class="control-label">Password Length</label>
             <span id="length-val" class="length-badge">16</span>
@@ -190,145 +231,107 @@
         </div>
 
         <!-- Character Options Checkboxes -->
-        <fieldset class="options-fieldset">
-          <legend class="control-label">Character Sets</legend>
+        <div class="char-sets-group">
+          <span class="control-label">Character Sets</span>
+          <div class="options-grid">
+            <label class="checkbox-option">
+              <input type="checkbox" id="chk-uppercase" checked />
+              <span class="custom-checkbox"></span>
+              <span class="option-text">Uppercase <span class="char-preview">(A-Z)</span></span>
+            </label>
 
-          <label class="checkbox-option">
-            <input type="checkbox" id="chk-uppercase" checked />
-            <span class="custom-checkbox"></span>
-            <span class="option-text">Uppercase Letters <span class="char-preview">(A-Z)</span></span>
-          </label>
+            <label class="checkbox-option">
+              <input type="checkbox" id="chk-lowercase" checked />
+              <span class="custom-checkbox"></span>
+              <span class="option-text">Lowercase <span class="char-preview">(a-z)</span></span>
+            </label>
 
-          <label class="checkbox-option">
-            <input type="checkbox" id="chk-lowercase" checked />
-            <span class="custom-checkbox"></span>
-            <span class="option-text">Lowercase Letters <span class="char-preview">(a-z)</span></span>
-          </label>
+            <label class="checkbox-option">
+              <input type="checkbox" id="chk-numbers" checked />
+              <span class="custom-checkbox"></span>
+              <span class="option-text">Numbers <span class="char-preview">(0-9)</span></span>
+            </label>
 
-          <label class="checkbox-option">
-            <input type="checkbox" id="chk-numbers" checked />
-            <span class="custom-checkbox"></span>
-            <span class="option-text">Numbers <span class="char-preview">(0-9)</span></span>
-          </label>
+            <label class="checkbox-option">
+              <input type="checkbox" id="chk-symbols" checked />
+              <span class="custom-checkbox"></span>
+              <span class="option-text">Symbols <span class="char-preview">(!@#$)</span></span>
+            </label>
+          </div>
 
-          <label class="checkbox-option">
-            <input type="checkbox" id="chk-symbols" checked />
-            <span class="custom-checkbox"></span>
-            <span class="option-text">Symbols <span class="char-preview">(!@#$%^&*)</span></span>
-          </label>
-
-          <div class="option-divider"></div>
-
-          <label class="checkbox-option">
+          <label class="checkbox-option ambiguous-option">
             <input type="checkbox" id="chk-exclude-ambiguous" />
             <span class="custom-checkbox"></span>
-            <span class="option-text">Exclude Ambiguous Characters <span class="char-preview">(0, O, 1, l, I)</span></span>
+            <span class="option-text">Exclude Ambiguous <span class="char-preview">(0, O, 1, l, I)</span></span>
           </label>
-        </fieldset>
+        </div>
 
         <!-- Minimum Character Requirements Section -->
         <div class="requirements-section">
           <div class="requirements-header">
-            <span class="control-label">Minimum Character Requirements</span>
+            <span class="control-label">Minimum Requirements</span>
             <span class="subtle-note">(Optional)</span>
           </div>
           <div class="requirements-grid">
             <div class="requirement-item">
-              <label for="req-uppercase" class="req-label">Uppercase</label>
+              <span class="req-label">Uppercase</span>
               <div class="stepper-control">
-                <button type="button" class="stepper-btn" data-target="req-uppercase" data-step="-1" aria-label="Decrease uppercase requirement">-</button>
-                <input type="number" id="req-uppercase" class="req-input" min="0" max="64" value="0" aria-label="Minimum uppercase characters" />
-                <button type="button" class="stepper-btn" data-target="req-uppercase" data-step="1" aria-label="Increase uppercase requirement">+</button>
+                <button type="button" class="stepper-btn" data-target="req-uppercase" data-step="-1" aria-label="Decrease uppercase minimum">−</button>
+                <input type="number" id="req-uppercase" class="req-input" min="0" max="64" value="0" aria-label="Minimum uppercase characters" readonly />
+                <button type="button" class="stepper-btn" data-target="req-uppercase" data-step="1" aria-label="Increase uppercase minimum">+</button>
               </div>
             </div>
 
             <div class="requirement-item">
-              <label for="req-lowercase" class="req-label">Lowercase</label>
+              <span class="req-label">Lowercase</span>
               <div class="stepper-control">
-                <button type="button" class="stepper-btn" data-target="req-lowercase" data-step="-1" aria-label="Decrease lowercase requirement">-</button>
-                <input type="number" id="req-lowercase" class="req-input" min="0" max="64" value="0" aria-label="Minimum lowercase characters" />
-                <button type="button" class="stepper-btn" data-target="req-lowercase" data-step="1" aria-label="Increase lowercase requirement">+</button>
+                <button type="button" class="stepper-btn" data-target="req-lowercase" data-step="-1" aria-label="Decrease lowercase minimum">−</button>
+                <input type="number" id="req-lowercase" class="req-input" min="0" max="64" value="0" aria-label="Minimum lowercase characters" readonly />
+                <button type="button" class="stepper-btn" data-target="req-lowercase" data-step="1" aria-label="Increase lowercase minimum">+</button>
               </div>
             </div>
 
             <div class="requirement-item">
-              <label for="req-numbers" class="req-label">Numbers</label>
+              <span class="req-label">Numbers</span>
               <div class="stepper-control">
-                <button type="button" class="stepper-btn" data-target="req-numbers" data-step="-1" aria-label="Decrease numbers requirement">-</button>
-                <input type="number" id="req-numbers" class="req-input" min="0" max="64" value="0" aria-label="Minimum number characters" />
-                <button type="button" class="stepper-btn" data-target="req-numbers" data-step="1" aria-label="Increase numbers requirement">+</button>
+                <button type="button" class="stepper-btn" data-target="req-numbers" data-step="-1" aria-label="Decrease numbers minimum">−</button>
+                <input type="number" id="req-numbers" class="req-input" min="0" max="64" value="0" aria-label="Minimum number characters" readonly />
+                <button type="button" class="stepper-btn" data-target="req-numbers" data-step="1" aria-label="Increase numbers minimum">+</button>
               </div>
             </div>
 
             <div class="requirement-item">
-              <label for="req-symbols" class="req-label">Symbols</label>
+              <span class="req-label">Symbols</span>
               <div class="stepper-control">
-                <button type="button" class="stepper-btn" data-target="req-symbols" data-step="-1" aria-label="Decrease symbols requirement">-</button>
-                <input type="number" id="req-symbols" class="req-input" min="0" max="64" value="0" aria-label="Minimum symbol characters" />
-                <button type="button" class="stepper-btn" data-target="req-symbols" data-step="1" aria-label="Increase symbols requirement">+</button>
+                <button type="button" class="stepper-btn" data-target="req-symbols" data-step="-1" aria-label="Decrease symbols minimum">−</button>
+                <input type="number" id="req-symbols" class="req-input" min="0" max="64" value="0" aria-label="Minimum symbol characters" readonly />
+                <button type="button" class="stepper-btn" data-target="req-symbols" data-step="1" aria-label="Increase symbols minimum">+</button>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Password History Section -->
+        <section class="history-section" aria-label="Password History">
+          <div class="history-header">
+            <div class="history-title-wrap">
+              <span class="control-label">Password History</span>
+              <label class="checkbox-option history-opt-in">
+                <input type="checkbox" id="chk-enable-history" />
+                <span class="custom-checkbox mini"></span>
+                <span class="opt-label">Auto-save</span>
+              </label>
+            </div>
+            <button type="button" id="btn-clear-history" class="clear-history-btn" disabled title="Clear history">Clear</button>
+          </div>
+
+          <div id="history-container" class="history-container">
+            <p id="history-empty-msg" class="history-empty-msg">History is disabled. Check "Auto-save" to store generated passwords locally.</p>
+            <ul id="history-list" class="history-list"></ul>
+          </div>
+        </section>
 
       </div>
-
-      <!-- Main Generate CTA Button -->
-      <button id="btn-main-generate" class="main-generate-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
-          <path d="M3 3v5h5"/>
-          <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
-          <path d="M16 21h5v-5"/>
-        </svg>
-        Generate Password
-      </button>
-
-      <!-- Password History Section -->
-      <section class="history-section" aria-label="Password History">
-        <div class="history-header">
-          <div>
-            <h2 class="history-title">Password History</h2>
-            <p class="history-privacy-notice">Stored locally on this device in your browser.</p>
-          </div>
-          <button type="button" id="btn-clear-history" class="clear-history-btn" disabled>Clear History</button>
-        </div>
-
-        <label class="checkbox-option history-opt-in">
-          <input type="checkbox" id="chk-enable-history" />
-          <span class="custom-checkbox"></span>
-          <span class="option-text">Save generated passwords to history</span>
-        </label>
-
-        <div id="history-container" class="history-container">
-          <p id="history-empty-msg" class="history-empty-msg">History disabled</p>
-          <ul id="history-list" class="history-list"></ul>
-        </div>
-      </section>
-
-      <!-- Privacy & Security Information Accordion -->
-      <section class="privacy-section">
-        <details class="privacy-details">
-          <summary class="privacy-summary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
-              <path d="m9 12 2 2 4-4"/>
-            </svg>
-            <span>Your passwords stay private — How does this work?</span>
-            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m6 9 6 6 6-6"/>
-            </svg>
-          </summary>
-          <div class="privacy-content">
-            <ul class="privacy-checklist">
-              <li>✓ <strong>Generated locally</strong>: Passwords are created entirely in your browser using the Web Crypto API.</li>
-              <li>✓ <strong>No server or backend</strong>: No password data is sent over the internet or logged anywhere.</li>
-              <li>✓ <strong>Zero tracking</strong>: No cookies, analytics, or external third-party tools.</li>
-              <li>✓ <strong>Opt-in local storage</strong>: History is saved in local browser storage only if you explicitly enable it.</li>
-            </ul>
-          </div>
-        </details>
-      </section>
 
     </main>
 
@@ -346,8 +349,7 @@
 
     <!-- Footer -->
     <footer class="app-footer">
-      <p> Passwords are generated using <code>crypto.getRandomValues()</code> and never leave your browser.</p>
-      <p class="shortcut-hint"><kbd>Ctrl</kbd> + <kbd>Enter</kbd> to generate</p>
+      <p>Generated with <code>crypto.getRandomValues()</code> • Zero tracking • <kbd>Ctrl</kbd> + <kbd>Enter</kbd> to generate</p>
     </footer>
   </div>
 
